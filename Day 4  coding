@@ -1,0 +1,109 @@
+1)
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+    char name[100], abv[20];
+    int i, j=0, k=0;
+    scanf("%[^\n]%*c",name);
+    for(i=0; i<strlen(name);i++)
+    {
+        abv[k]=name[j];
+        if(name[i]==' ')
+        {
+            k=k+1;
+            j=i;
+            abv[k]=name[j];
+            j++;
+        }
+    }
+    abv[k+1]='\0';
+    printf("%s",abv);
+    return 0;
+}
+2)
+#include<stdio.h>
+#define MAXN 100
+int main()
+{
+    char s[MAXN];
+    scanf("%[^\n]", s);
+    int f[26] = {0};
+    int maxf = 0;
+    for(int i=0; s[i]!='\0'; i++)
+    {
+        if(s[i] != ' ')
+        {
+            f[s[i]-'a']++;
+            if(f[s[i]-'a']> f[maxf]) maxf = s[i]-'a';
+        }
+    }
+    printf("%c %d", maxf+'a',f[maxf]);
+    return 0;
+}
+3)
+#include<stdio.h>
+#include<string.h>
+#define MAXN 100
+int main()
+{
+    char s[MAXN], t[MAXN];
+    scanf("%s", s);
+    scanf("%s", t);
+    int n = strlen(s);
+    int m = strlen(t);
+    if(n == m)
+    {
+        for(int i=0;i<n;i++)
+        {
+            int j = 0, k = i;
+            while(j<n)
+            {
+                if(s[j] !=t[k])
+                break;
+                j++;
+                k = (k+1)%m;
+            }
+            if(j == n)
+            {
+                printf("Is a rotation, shifted by %d indices\n", i);
+                return 0;
+            }
+        }
+    }
+    printf("Not a rotation\n");
+    ret 0;
+3)
+
+#include<stdio.h>
+#include<string.h>
+#define MAXN 100
+int main()
+{
+    char s[MAXN], t[MAXN];
+    scanf("%s", s);
+    scanf("%s", t);
+    int n = strlen(s);
+    int m = strlen(t);
+    if(n == m)
+    {
+        for(int i=0;i<n;i++)
+        {
+            int j = 0, k = i;
+            while(j<n)
+            {
+                if(s[j] !=t[k])
+                break;
+                j++;
+                k = (k+1)%m;
+            }
+            if(j == n)
+            {
+                printf("Is a rotation, shifted by %d indices\n", i);
+                return 0;
+            }
+        }
+    }
+    printf("Not a rotation\n");
+    return 0;
+  }
